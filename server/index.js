@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
 
 // Razorpay setup
 const razorpay = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_SNvBK44fG4dklw",
-    key_secret: process.env.RAZORPAY_KEY_SECRET || "phfU42NDoVcDkePThBb1FCfp",
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
 // Create order API
