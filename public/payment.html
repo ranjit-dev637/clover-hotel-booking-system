@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Reservation - THE CLOVERS GROUP</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-darker text-white">
+
+    <!-- Simple Navigation -->
+    <nav class="navbar navbar-dark bg-dark border-bottom border-secondary mb-5">
+        <div class="container justify-content-center py-2">
+            <a class="navbar-brand text-gold fw-bold m-0" href="index.html" style="font-size: 1.5rem;"><span class="text-white">THE</span> <span class="text-gold">CLOVERS</span> <span class="text-white">GROUP</span></a>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <!-- Progress Tracker -->
+                    <div class="d-flex justify-content-center align-items-center mb-5">
+                        <div class="text-center mx-3 text-muted">
+                            <div class="rounded-circle border border-secondary d-flex align-items-center justify-content-center mx-auto mb-2"
+                                style="width: 40px; height: 40px; font-weight: bold;">1</div>
+                            <small>Details</small>
+                        </div>
+                        <div style="height: 2px; width: 50px; background-color: var(--primary-gold);"></div>
+                        <div class="text-center mx-3 text-gold">
+                            <div class="rounded-circle bg-gold text-dark d-flex align-items-center justify-content-center mx-auto mb-2"
+                                style="width: 40px; height: 40px; font-weight: bold;">2</div>
+                            <small>Payment</small>
+                        </div>
+                        <div style="height: 2px; width: 50px; background-color: #444;"></div>
+                        <div class="text-center mx-3 text-muted">
+                            <div class="rounded-circle border border-secondary d-flex align-items-center justify-content-center mx-auto mb-2"
+                                style="width: 40px; height: 40px; font-weight: bold;">3</div>
+                            <small>Confirmation</small>
+                        </div>
+                    </div>
+
+                    <div class="card bg-dark border-secondary shadow-lg">
+                        <div class="card-body p-5">
+                            <h2 class="font-heading text-center text-gold mb-4">Review & Pay</h2>
+
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-6">
+                                    <h5 class="text-uppercase text-muted fs-6 mb-3">Guest Information</h5>
+                                    <p class="mb-1 fw-bold fs-5" id="guestName">John Doe</p>
+                                    <p class="text-muted mb-1" id="guestEmail">john@example.com</p>
+                                    <p class="text-muted mb-0" id="guestPhone">+91 xxxxxxxxxx</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="text-uppercase text-muted fs-6 mb-3">Stay Details</h5>
+                                    <p class="mb-1 fw-bold fs-5 text-gold" id="roomName">Presidential Suite</p>
+                                    <p class="text-muted mb-1"><span id="checkInDate">01 Oct 2026</span> - <span
+                                            id="checkOutDate">03 Oct 2026</span></p>
+                                    <p class="text-muted mb-0"><span id="guestCount">2 Adults</span></p>
+                                </div>
+                            </div>
+
+                            <hr class="border-secondary mb-4">
+
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h3 class="font-heading mb-0">Total Amount</h3>
+                                <h2 class="font-heading text-gold mb-0" id="totalAmount">₹0</h2>
+                            </div>
+
+                            <div class="alert alert-dark border border-warning text-warning bg-transparent text-center mb-4"
+                                role="alert">
+                                <i class="fas fa-lock me-2"></i> Secure SSL Encrypted Checkout via Razorpay
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button id="payButton" class="btn btn-gold btn-lg py-3 fw-bold shadow-lg" disabled>
+                                    Pay Now
+                                </button>
+                                <a href="booking.html" class="btn btn-outline-secondary mt-2">Back to Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load details from localStorage
+            const storedDetails = localStorage.getItem('cloverBookingDetails');
+
+            if (!storedDetails) {
+                alert("Booking details not found. Redirecting to home.");
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const details = JSON.parse(storedDetails);
+
+            // Try to extract price dynamically if it was missing 
+            // Ensures total is never 0 which breaks Razorpay
+            let dynamicPrice = 0;
+            if (details.roomType && details.roomType.includes("Deluxe Room")) dynamicPrice = 3000;
+            else if (details.roomType && details.roomType.includes("Cabana Deluxe")) dynamicPrice = 3500;
+            else if (details.roomType && details.roomType.includes("Master Suite Family")) dynamicPrice = 4000;
+            else dynamicPrice = 4000; // ultimate fallback
+            
+            let calcNights = 1;
+            if (details.checkIn && details.checkOut) {
+                const d1 = new Date(details.checkIn);
+                const d2 = new Date(details.checkOut);
+                if (!isNaN(d1) && !isNaN(d2)) {
+                    const diffDays = Math.ceil(Math.abs(d2 - d1) / (1000 * 60 * 60 * 24));
+                    if (diffDays > 0) calcNights = diffDays;
+                }
+            }
+            
+            // Re-calculate local amount to ensure it is valid
+            const validAmount = dynamicPrice * calcNights;
+            // Overwrite details.amount if it was falsy or 0
+            if (!details.amount || details.amount <= 0) {
+                details.amount = validAmount;
+            }
+
+            // Populate UI
+            document.getElementById('guestName').innerText = details.firstName + " " + details.lastName;
+            document.getElementById('guestEmail').innerText = details.email;
+            document.getElementById('guestPhone').innerText = details.phone;
+            document.getElementById('roomName').innerText = details.roomType || "-";
+            document.getElementById('checkInDate').innerText = details.checkIn || "-";
+            document.getElementById('checkOutDate').innerText = details.checkOut || "-";
+            document.getElementById('guestCount').innerText = details.guests ? (details.guests + (details.guests == 1 ? " Guest" : " Guests")) : "-";
+            document.getElementById('totalAmount').innerText = "₹" + parseInt(details.amount).toLocaleString('en-IN');
+
+            const payBtn = document.getElementById('payButton');
+            payBtn.disabled = false; // Enable button once data is loaded
+
+            // Handle Payment Click
+            payBtn.addEventListener('click', async function () {
+                payBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+                payBtn.disabled = true;
+
+                try {
+                    // 1. Call Backend to create Order
+                    const response = await fetch('/create-order', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            amount: details.amount
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (!data.success) {
+                        throw new Error(data.message || 'Order creation failed');
+                    }
+
+                    // 2. Setup Razorpay Options
+                    const options = {
+                        "key": "rzp_test_SNvBK44fG4dklw", // Using test key from server/index.js
+                        "amount": data.order.amount,
+                        "currency": "INR",
+                        "name": "THE CLOVERS GROUP",
+                        "description": "Room Reservation - " + details.roomType,
+                        "image": "images/entrance.png",
+                        "order_id": data.order.id,
+                        "handler": function (response) {
+                            // On successful payment
+                            console.log("Payment Success:", response);
+
+                            // Save success state
+                            details.paymentId = response.razorpay_payment_id;
+                            details.orderId = response.razorpay_order_id;
+                            localStorage.setItem('cloverBookingSuccess', JSON.stringify(details));
+
+                            // Clear temp booking request
+                            localStorage.removeItem('cloverBookingDetails');
+
+                            window.location.href = 'success.html';
+                        },
+                        "prefill": {
+                            "name": details.firstName + " " + details.lastName,
+                            "email": details.email,
+                            "contact": details.phone,
+                            "method": "upi" // Opens Checkout with UPI selected
+                        },
+                        "config": {
+                            "display": {
+                                "blocks": {
+                                    "upi": {
+                                        "name": "Pay via UPI",
+                                        "instruments": [
+                                            {
+                                                "method": "upi",
+                                                "flows": ["intent", "qr", "collect"] // Enable all UPI flows (Apps, QR, VPA manual entry)
+                                            }
+                                        ]
+                                    }
+                                },
+                                "sequence": ["block.upi"],
+                                "preferences": {
+                                    "show_default_blocks": true // Retain other payment methods (Cards, Netbanking, etc.)
+                                }
+                            }
+                        },
+                        "notes": {
+                            "roomType": details.roomType,
+                            "checkIn": details.checkIn,
+                            "checkOut": details.checkOut
+                        },
+                        "theme": {
+                            "color": "#D4AF37" // matches var(--primary-gold)
+                        },
+                        "modal": {
+                            "ondismiss": function () {
+                                // User closed modal
+                                payBtn.innerHTML = 'Pay Now';
+                                payBtn.disabled = false;
+                            }
+                        }
+                    };
+
+                    // 3. Open Razorpay Interface
+                    const rzp = new Razorpay(options);
+                    rzp.on('payment.failed', function (response) {
+                        alert("Payment Failed. Reason: " + response.error.description);
+                        payBtn.innerHTML = 'Pay Now';
+                        payBtn.disabled = false;
+                    });
+                    rzp.open();
+
+                } catch (error) {
+                    console.error("Payment Error:", error);
+                    alert("Something went wrong initializing payment. Please try again.");
+                    payBtn.innerHTML = 'Pay Now';
+                    payBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

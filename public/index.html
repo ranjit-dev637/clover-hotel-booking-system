@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE CLOVERS GROUP - Modern Luxury Experience</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="text-white">THE</span> <span class="text-gold">CLOVERS</span> <span class="text-white">GROUP</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#amenities">Amenities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-gold text-dark" href="rooms.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-carousel-section" id="home">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false"
+            data-bs-interval="5000">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner h-100">
+                <!-- Slide 1 -->
+                <div class="carousel-item active h-100">
+                    <img src="images/hotel-entrance.png" class="d-block w-100 h-100 object-fit-cover carousel-image" alt="Luxury Hotel Entrance">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item h-100">
+                    <img src="images/room.png" class="d-block w-100 h-100 object-fit-cover carousel-image" alt="Luxury Hotel Room" loading="lazy">
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item h-100">
+                    <img src="images/Dinning.png" class="d-block w-100 h-100 object-fit-cover carousel-image" alt="Fine Dining Area" loading="lazy">
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item h-100">
+                    <img src="images/entrance.png" class="d-block w-100 h-100 object-fit-cover carousel-image" alt="Lobby Details" loading="lazy">
+                </div>
+            </div>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+            <div class="hero-welcome-box">
+                <h1>Experience Unmatched Luxury</h1>
+                <p class="hero-description mt-2 mb-4">Discover an oasis of tranquility and refined elegance in the heart of the city.</p>
+                <a href="rooms.html" class="btn btn-gold btn-hero-cta btn-lg px-5 py-3 fs-5">BOOK YOUR STAY</a>
+            </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <a href="#about" class="scroll-down"><i class="fas fa-long-arrow-alt-down"></i></a>
+        </div>
+    </header>
+
+    <!-- About/Welcome Section -->
+    <section class="py-5 bg-darker" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h5 class="text-gold mb-3 text-uppercase letter-spacing-2">Welcome to Clover</h5>
+                    <h2 class="display-5 mb-4 font-heading">A Legacy of Excellence in Hospitality</h2>
+                    <p class="lead mb-4">Nestled in the heart of the city, THE CLOVERS GROUP offers an oasis of tranquility
+                        and refined elegance.</p>
+                    <p class="mb-4">From our meticulously designed rooms to our world-class dining and spa facilities,
+                        every aspect of your stay is crafted to provide an unforgettable experience. Whether you are
+                        traveling for business or leisure, we promise a stay that exceeds your expectations.</p>
+                    <a href="rooms.html" class="btn btn-outline-gold mt-3">Explore Rooms</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/entrance.png" alt="Hotel Lobby"
+                        class="img-fluid rounded shadow-lg border border-dark">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rooms Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-gold mb-2 text-uppercase">Our Accommodation</h5>
+                <h2 class="section-title">Luxurious Suites & Rooms</h2>
+            </div>
+
+            <!-- Room 1 -->
+            <div class="row align-items-center mb-5 pb-5 border-bottom border-secondary room-list-item">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="room-img-wrapper" style="height: 400px;">
+                        <img src="images/room.png" alt="Master Suite Family"
+                            class="img-fluid h-100 w-100 object-fit-cover shadow-lg border border-dark">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="font-heading mb-3 text-gold">Master Suite Family</h2>
+                    <p class="lead text-muted mb-4">Our Master Suite Family (Twin Beds Queen Size) is thoughtfully
+                        designed to meet your needs whether you are visiting for business or pleasure. Each room comes
+                        with premium amenities including comfortable bedding, an en-suite bathroom, a work desk, and
+                        24-hour room service.</p>
+                    <a href="booking.html?room=Master%20Suite%20Family" class="btn btn-gold btn-lg mt-2"><i
+                            class="fas fa-arrow-circle-right me-2"></i>Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div
+                class="row align-items-center mb-5 pb-5 border-bottom border-secondary flex-lg-row-reverse room-list-item">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="room-img-wrapper" style="height: 400px;">
+                        <img src="images/room.png" alt="Cabana Deluxe"
+                            class="img-fluid h-100 w-100 object-fit-cover shadow-lg border border-dark">
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="font-heading mb-3 text-gold">Cabana Deluxe</h2>
+                    <p class="lead text-muted mb-4">Discover the ultimate in relaxation at The Clover Group. Our Cabana
+                        Deluxe rooms offer a tranquil retreat with contemporary décor, premium bedding, complimentary
+                        Wi-Fi, in-room entertainment, and a dedicated workspace designed for both business and leisure
+                        travelers.</p>
+                    <a href="booking.html?room=Cabana%20Deluxe" class="btn btn-gold btn-lg mt-2"><i
+                            class="fas fa-arrow-circle-right me-2"></i>Book Now</a>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="row align-items-center mb-4 room-list-item">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="room-img-wrapper" style="height: 400px;">
+                        <img src="images/room.png" alt="Deluxe Room"
+                            class="img-fluid h-100 w-100 object-fit-cover shadow-lg border border-dark">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="font-heading mb-3 text-gold">Deluxe Room</h2>
+                    <p class="lead text-muted mb-4">Experience true hospitality in our Deluxe Rooms designed for comfort
+                        and elegance. Featuring plush furnishings, modern interiors, large windows, and a relaxing
+                        ambience, these rooms are ideal for both short and extended stays.</p>
+                    <a href="booking.html?room=Deluxe%20Room" class="btn btn-gold btn-lg mt-2"><i
+                            class="fas fa-arrow-circle-right me-2"></i>Book Now</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="rooms.html" class="btn btn-outline-gold">View All Rooms</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="py-5 bg-darker" id="amenities">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-gold mb-2 text-uppercase">Hotel Features</h5>
+                <h2 class="section-title">Premium Amenities</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-wifi amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Free High-Speed WiFi</h4>
+                        <p class="text-muted small">Stay connected with complimentary high-speed internet access
+                            throughout the hotel.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-utensils amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Multi-Cuisine Restaurant</h4>
+                        <p class="text-muted small">Experience culinary excellence with global flavors in our
+                            award-winning restaurant.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-concierge-bell amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">24/7 Room Service</h4>
+                        <p class="text-muted small">Enjoy delicious meals and immediate assistance in the comfort of
+                            your room.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-parking amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Free Parking</h4>
+                        <p class="text-muted small">Ample and secure free parking available exclusively for all our
+                            guests.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-handshake amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Conference Hall</h4>
+                        <p class="text-muted small">State-of-the-art meeting and conference facilities for your business
+                            needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-tshirt amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Laundry Service</h4>
+                        <p class="text-muted small">Prompt and professional laundry and dry-cleaning services upon
+                            request.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-map-marked-alt amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">Travel Desk</h4>
+                        <p class="text-muted small">Expert assistance with your local tours, transport and ticketing
+                            needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-box">
+                        <i class="fas fa-user-tie amenity-icon"></i>
+                        <h4 class="font-heading mb-3 fs-5">24/7 Front Desk</h4>
+                        <p class="text-muted small">Our dedicated reception team is always available to welcome and
+                            assist you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-5" id="gallery">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-gold mb-2 text-uppercase">Discover</h5>
+                <h2 class="section-title">Photo Gallery</h2>
+            </div>
+
+            <div class="masonry-gallery">
+                <div class="masonry-item">
+                    <img src="images/entrance.png" class="img-fluid rounded shadow-sm" alt="Hotel Exterior">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="images/Dinning.png" class="img-fluid rounded shadow-sm" alt="Dining Area">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="images/RECEPTION.png" class="img-fluid rounded shadow-sm" alt="Reception Front">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="images/RECEPTION2.png" class="img-fluid rounded shadow-sm" alt="Reception Lobby">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="images/HotelENTRANCE.png" class="img-fluid rounded shadow-sm" alt="Hotel Main Entrance">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="masonry-item">
+                    <img src="images/room.png" class="img-fluid rounded shadow-sm" alt="Luxury Room">
+                    <div class="masonry-overlay rounded"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal" aria-label="Close" style="z-index: 1055;"></button>
+                <div class="modal-body p-0 text-center">
+                    <img src="" id="lightboxImg" class="img-fluid rounded shadow-lg" alt="Gallery Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-darker">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-gold mb-2 text-uppercase">Guest Reviews</h5>
+                <h2 class="section-title">What They Say</h2>
+            </div>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="lead mb-4 font-italic">"Absolutely stunning experience! The attention to
+                                        detail in the rooms and the impeccable service made our anniversary celebration
+                                        unforgettable. The restaurant food was divine."</p>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="font-heading text-gold mb-0">- Sarah & James M.</h5>
+                                    <small class="text-muted">Stayed Dec 2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="lead mb-4 font-italic">"Best business hotel I've stayed at. The amenities
+                                        are top-notch, WiFi is incredibly fast, and the staff went above and beyond to
+                                        ensure my stay was productive and comfortable."</p>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <h5 class="font-heading text-gold mb-0">- David Chen</h5>
+                                    <small class="text-muted">Stayed Jan 2026</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="lead mb-4 font-italic">"The spa facilities are world-class. A perfect
+                                        weekend getaway from the city bustles. The Presidential Suite offers views that
+                                        are simply breathtaking."</p>
+                                    <div class="rating mb-3">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h5 class="font-heading text-gold mb-0">- Elena Rodriguez</h5>
+                                    <small class="text-muted">Stayed Feb 2026</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-gold mb-2 text-uppercase">Get in Touch</h5>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="contact-form-wrapper p-4 p-md-5 bg-darker border border-secondary h-100">
+                        <h4 class="font-heading mb-4 text-gold">Send a Message</h4>
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="jane@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Your Message</label>
+                                <textarea class="form-control" rows="4" placeholder="How can we help you?"
+                                    required></textarea>
+                            </div>
+                            <button class="btn btn-gold w-100 py-2" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Contact Info & Map -->
+                <div class="col-lg-6">
+                    <div class="row mb-5">
+                        <div class="col-sm-6 mb-4 mb-sm-0">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="contact-icon-box bg-gold text-dark rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 50px; height: 50px;">
+                                        <i class="fas fa-map-marker-alt fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="font-heading h5 mb-2 text-white">Location</h4>
+                                    <p class="text-muted mb-0 small">
+                                        <strong>Clover Woods Escape to Nature</strong><br>
+                                        (A Unit of THE CLOVERS GROUP)<br>
+                                        Plot - 69/1647/5897, 2nd S/C, Co-Operative Society Colony<br>
+                                        Khata No. 611/1853, Plot No. 145 and Khata No. 611/1855<br>
+                                        Plot No. 144/2360, Phase-VII, Rangeswar Nagar<br>
+                                        Sailashree Vihar, Patia<br>
+                                        Bhubaneswar, Odisha - 751021, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="contact-icon-box bg-gold text-dark rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 50px; height: 50px;">
+                                        <i class="fas fa-phone-alt fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="font-heading h5 mb-2 text-white">Phone</h4>
+                                    <p class="text-muted mb-0 small">+91 9078346460<br>+91 9778706050</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="contact-icon-box bg-gold text-dark rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width: 50px; height: 50px;">
+                                        <i class="fas fa-envelope fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="font-heading h5 mb-2 text-white">Email</h4>
+                                    <p class="text-muted mb-0 small">Clovervilahotel@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Google Map -->
+                    <div class="map-container border border-secondary rounded overflow-hidden" style="height: 250px;">
+                        <iframe
+                            src="https://www.google.com/maps?q=Sailashree%20Vihar%20Patia%20Bhubaneswar%20Odisha%20751021&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="font-heading text-gold mb-4">THE CLOVERS GROUP</h3>
+                    <p class="text-muted pe-lg-4">Experience the pinnacle of luxury and comfort in the heart of the
+                        city. We look forward to welcoming you.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading font-heading">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html"
+                                class="text-muted text-decoration-none hover-gold">Home</a></li>
+                        <li class="mb-2"><a href="rooms.html"
+                                class="text-muted text-decoration-none hover-gold">Rooms</a></li>
+                        <li class="mb-2"><a href="#amenities"
+                                class="text-muted text-decoration-none hover-gold">Amenities</a></li>
+                        <li class="mb-2"><a href="#gallery"
+                                class="text-muted text-decoration-none hover-gold">Gallery</a></li>
+                        <li class="mb-2"><a href="booking.html" class="text-muted text-decoration-none hover-gold">Book
+                                Now</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading font-heading">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="text-muted">
+                                <strong>Clover Woods Escape to Nature</strong><br>
+                                (A Unit of THE CLOVERS GROUP)<br>
+                                Plot - 69/1647/5897, 2nd S/C, Co-Operative Society Colony<br>
+                                Khata No. 611/1853, Plot No. 145 and Khata No. 611/1855<br>
+                                Plot No. 144/2360, Phase-VII, Rangeswar Nagar<br>
+                                Sailashree Vihar, Patia<br>
+                                Bhubaneswar, Odisha - 751021, India
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span class="text-muted">+91 9078346460, +91 9778706050</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span class="text-muted">Clovervilahotel@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading font-heading">Location</h5>
+                    <div class="map-container border border-dark rounded overflow-hidden">
+                        <!-- Placeholder Map Embed taking up full width of container -->
+                        <iframe
+                            src="https://www.google.com/maps?q=Sailashree%20Vihar%20Patia%20Bhubaneswar%20Odisha%20751021&output=embed"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-4 border-top border-secondary">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="text-muted mb-0">&copy; 2026 THE CLOVERS GROUP. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
